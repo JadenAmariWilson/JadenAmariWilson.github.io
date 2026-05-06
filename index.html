@@ -1,67 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Sample Webpage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Murecho:wght@100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Linefont:wght@4..1000&family=Michroma&family=Murecho:wght@100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
         body {
-            font-family: 'Michroma';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(157, 156, 255);
         }
-        h1 {
-            text-align: center;
-
+        nav ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            padding: 0;
+            
         }
-        section {
-            width: 80%;
-            margin:auto;
-            border: 2px solid whitesmoke;
+        nav ul li {
+            margin: 10px 20px 10px 20px;
+            background-color: #bbbdf6;
+            padding: 10px;
+            border: 5px ridge #797a9e;
+            border-radius: 10px;
+            transition: .75534902806802486954862068542747568235697262934s;
+        }
+        nav ul li:hover {
+            background-color: #9893da;
+            margin: 0px;
+            padding: 10px 30px 10px 30px;
+            transition: .75534902806802486954862068542747568235697262934s;
+        }
+        article {
+            background-color: #bbbdf6;
+            width: 75%;
+            border-width: 5px;
+            border-style: ridge;
+            border-color: #797a9e;
+            border-radius: 10px;
             padding: 10px;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Sample Webpage</h1>
-        <nav>
-            <details>
-                <summary>Navigation Bar</summary>
-                <ul>
-                    <li><a href="index.html">Home Page</a></li>
-                    <li><a href="about.html">abao</a></li>
-                    <li><a href="GetToSchool7/index.html">GTS7</a></li>
-                    <li><a
-                            href="https://www.google.com/search?q=aleph+null&sca_esv=5d5eb154281590ac&sxsrf=ANbL-n6hbHbcvzPw0v-Kl2TAZxYntfdcCA%3A1775565854733&ei=HvzUacSwLPOf5NoPh57FoAs&biw=1918&bih=432&ved=0ahUKEwjEt6-g4tuTAxXzD1kFHQdPEbQQ4dUDCBE&uact=5&oq=aleph+null&gs_lp=Egxnd3Mtd2l6LXNlcnAiCmFsZXBoIG51bGwyCxAAGIAEGLEDGIMBMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIIEC4YgAQY5QQyBRAAGIAESKgqUOAGWLYocAJ4AZABApgBc6AB8QqqAQQxMy4yuAEDyAEA-AEBmAINoALeCKgCFMICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIOEAAYsAMY5AIY1gTYAQHCAhcQLhiwAxi4BhjYAhjIAxjaBhjcBtgBAcICDRAAGIAEGLEDGEMYigXCAgcQABiABBgKwgIHEC4YgAQYCsICFhAAGIAEGEMYtAIY5wYYigUY6gLYAQLCAhAQABgDGLQCGOoCGI8B2AEBwgIKEAAYgAQYQxiKBcICERAuGIAEGLEDGNEDGIMBGMcBwgIOEAAYgAQYsQMYgwEYigXCAg4QLhiABBixAxjRAxjHAcICCxAAGIAEGJECGIoFwgIIEC4YgAQYsQPCAgUQLhiABMICCBAAGIAEGLEDwgIOEC4YgAQYsQMYgwEYigXCAhcQLhiABBixAxiXBRjcBBjeBBjfBNgBAcICFBAuGIAEGMcBGJgFGJkFGJ4FGK8BwgILEC4YgAQY0QMYxwGYAwbxBf9it2Otyw4oiAYBkAYTugYGCAEQARgJugYECAIYB5IHAzcuNqAHpsgBsgcDNS42uAfRCMIHBjAuMi4xMcgHOIAIAA&sclient=gws-wiz-serp&safe=active&ssui=on">aleph
-                            null google</a></li>
-
-                </ul>
-            </details>
-        </nav>
-    </header>
-    
-    <section>
-    
-        <article>
-            <h2>welcm 2 me webpage</h2>
-            <time datetime="2026 04 07">April 7</time>
-            <p>heres sm stuff abt me EEEEEEEEEEVIL webpage</p>
-        </article>
-        
-        <article>
-            <h2>other</h2>
-            <time datetime="2026 04 07">April 7</time>
-            <p>^ ^ v v < > < > b a start</p>
-        </article>
-        
-    </section>
-
-        <footer>built by Jaden A. Wilson *explodes*</footer>
+    <h1>PageHeader</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Link0</a></li>
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link2</a></li>
+            <li><a href="#">Link3</a></li>
+            <li><a href="#">Link4</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>ArticleTitle</h2>
+        <p>SomeText</p>
+    </article>
+    <footer>
+        &copy; 2026
+    </footer>
 </body>
 
 </html>

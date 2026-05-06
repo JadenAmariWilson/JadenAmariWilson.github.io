@@ -1,0 +1,25 @@
+/* woag */
+body {
+    font-family: 'Michroma';
+    background-color: rgb(41, 41, 41);
+    color: cadetblue;
+}
+
+/* woagg */
+h1 {
+    text-align: center;
+
+}
+
+/* woaggg */
+section {
+    width: 80%;
+    margin: auto;
+    border: 2px solid whitesmoke;
+    padding: 10px;
+}
+
+/* woagggg */
+a {
+    color:rgb(132, 141, 255);
+}
