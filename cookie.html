@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href=".\css\style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>we forgor - pspspsps look we added a clicker game pspspsps</title>
+</head>
+
+<body>
+    <nav><ul>
+    <a href=".\index.html"><li>Main</li></a>
+    <a href=".\about.html"><li>About Me</li></a>
+    <a href=".\GetToSchool7\index.html"><li>Get To School: 7</li></a>
+    <li class="selected">Niko Clicker (You're here!)</li>
+    </ul></nav>
+    
+    <img src="niko.jpg" alt="Niko" width="400px" id="cookie" onclick="cookiClick()">
+    <div id="score">0. you should click Niko NOW!!!</div>
+    <button id="upAuto" onclick="autoUp()"> Upgrade A. Clickers (100)</button>
+    <button id="upCMult" onclick="multUp()"> Upgrade Click Mult. (100)</button>
+    <button id="cheat" onclick="cheats()"> silly cheat button (why) </button>
+    <button id="reset" onclick="reset()">reset data</button>
+</body>
+<script>
+    //setup
+    var autoBtn = document.getElementById("upAuto")
+    var cmultBtn = document.getElementById("upCMult")
+    var resetBtn = document.getElementById("reset")
+    var nCM = 0
+    //cheats
+    var cheat = false
+    var cheatbtn = document.getElementById("cheat")
+
+    //a.click
+    var autoclickAmount = 0
+    var autoclickCostPerLevel = 100
+    var autoclickCost = 100
+
+
+    //c.mult
+    var clickMult = 1
+    var clickMultCostPerLevel = 100
+    var clickMultCost = 100
+
+
+    //score
+    var score = 0
+    var scorebox = document.getElementById("score")
+
+    // click
+    function cookiClick() {
+        score = score + (1 * clickMult)
+        scorebox.innerHTML = "you clicked " + score + " times !!"
+        saveGame()
+    }
+
+    function autoUp() {
+        if (score >= autoclickCost) {
+            score = score - autoclickCost
+            autoclickAmount = autoclickAmount + 1
+            autoclickCost = autoclickCost + autoclickCostPerLevel
+            autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")"
+            scorebox.innerHTML = "u has " + score + " clicks"
+            saveGame()
+        } else {
+            console.warn("NOTENOUGHCLICKS ERROR90321")
+            autoBtn.innerHTML = "player " + score + " clicks isn't enough for that"
+            setTimeout(() => {
+               autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")" 
+            }, 3000);
+        }
+    }
+
+    function multUp() {
+        if (score >= clickMultCost) {
+            score = score - clickMultCost
+            clickMult = clickMult + 1
+            clickMultCost = clickMultCost + clickMultCostPerLevel
+            scorebox.innerHTML = "u has " + score + " clicks"
+            saveGame()
+            cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")"
+        } else {
+            console.warn("NOTENOUGHCLICKS ERROR90321")
+            cmultBtn.innerHTML = "player " + score + " clicks isn't enough for that"
+            setTimeout(() => {
+               cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")" 
+            }, 3000);
+        }
+    }
+
+    function autoclick() {
+        score = score + (1 * autoclickAmount)
+        scorebox.innerHTML = "you clicked " + score + " times !!"
+        saveGame()
+
+    }
+
+    function cheats() {
+        if (cheat == false) {
+            cheat = true
+            nCM = clickMult
+            clickMult = 1e300300300300300300300300300300300300300
+            cheatbtn.innerHTML = "cheats................on"
+
+        } else {
+            cheat = false
+            clickMult = nCM
+            cheatbtn.innerHTML = "cheats...............off"
+            setTimeout(() => {
+                cheatbtn.innerHTML = "........................"
+                setTimeout(() => {
+                    cheatbtn.innerHTML = "silly cheat button (why)"
+                }, 2500);
+            }, 2500);
+        }
+
+    }
+
+    function saveGame() {
+        var saveData = {
+
+            //a.click
+            autoclickAmount: autoclickAmount,
+            autoclickCostPerLevel: autoclickCostPerLevel,
+            autoclickCost: autoclickCost,
+
+
+            //c.mult
+            clickMult: clickMult,
+            clickMultCostPerLevel: clickMultCostPerLevel,
+            clickMultCost: clickMultCost,
+
+
+            //score
+            score: score
+        }
+        var saveText = JSON.stringify (saveData)
+        document.cookie = saveText
+    }
+
+    function loadGame(){
+        var cookieTxt = document.cookie
+        cookieTxt = JSON.parse(cookieTxt)
+
+        autoclickAmount=cookieTxt.autoclickAmount
+        autoclickCostPerLevel=cookieTxt.autoclickCostPerLevel
+        autoclickCost=cookieTxt.autoclickCost
+        clickMult=cookieTxt.clickMult
+        clickMultCostPerLevel=cookieTxt.clickMultCostPerLevel
+        clickMultCost=cookieTxt.clickMultCost
+        score=cookieTxt.score
+        cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")"
+        autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")"
+        scorebox.innerHTML = "Loaded, autoclicker will start in 3 seconds! you clicked " + score + " times !!"
+    }
+    loadGame()
+    setTimeout(() => {
+        setInterval(autoclick, 1)
+    }, 3000);
+
+    function reset(){
+        
+        score = 0
+        clickMult = 1
+        autoclickAmount = 0
+        autoclickCost = 100
+        clickMultCost = 100
+        cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")"
+        autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")"
+        saveGame()
+        scorebox.innerHTML = "game reset."
+        resetBtn.innerHTML = "..."
+        }
+</script>
+
+</html>
