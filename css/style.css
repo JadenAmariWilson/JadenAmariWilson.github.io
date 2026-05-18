@@ -62,6 +62,14 @@ button {
     transition: all 2s ease-out;
 }
 
+button:hover {
+    background-color: #ffd35a;
+    border: 5px double #5e5ec9;
+    color: #5e5ec9;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 15px;
+}
+
 img {
     border: #ffd35a;
     border-radius: 50px;
