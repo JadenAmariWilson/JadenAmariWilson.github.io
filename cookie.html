@@ -66,9 +66,11 @@
             score = score - autoclickCost
             autoclickAmount = autoclickAmount + 1
             autoclickCost = autoclickCost + autoclickCostPerLevel
-            autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")"
-            scorebox.innerHTML = "u has " + score + " clicks"
+            autoBtn.innerHTML = "you have " + score + " clicks now player"
             saveGame()
+            setTimeout(() => {
+               autoBtn.innerHTML = "Upgrade A. Clickers (" + autoclickCost + ")" 
+            }, 3000);
         } else {
             console.warn("NOTENOUGHCLICKS ERROR90321")
             autoBtn.innerHTML = "player " + score + " clicks isn't enough for that"
@@ -83,9 +85,11 @@
             score = score - clickMultCost
             clickMult = clickMult + 1
             clickMultCost = clickMultCost + clickMultCostPerLevel
-            scorebox.innerHTML = "u has " + score + " clicks"
+            cmultBtn.innerHTML = "you have " + score + " clicks now player"
             saveGame()
-            cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")"
+            setTimeout(() => {
+               cmultBtn.innerHTML = "Upgrade Click Mult. (" + clickMultCost + ")" 
+            }, 3000);
         } else {
             console.warn("NOTENOUGHCLICKS ERROR90321")
             cmultBtn.innerHTML = "player " + score + " clicks isn't enough for that"
