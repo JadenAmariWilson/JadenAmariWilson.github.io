@@ -66,6 +66,7 @@
             score = score - autoclickCost
             autoclickAmount = autoclickAmount + 1
             autoclickCost = autoclickCost + autoclickCostPerLevel
+            scorebox.innerHTML = "you clicked " + score + " times !!"
             autoBtn.innerHTML = "you have " + score + " clicks now player"
             saveGame()
             setTimeout(() => {
@@ -85,6 +86,7 @@
             score = score - clickMultCost
             clickMult = clickMult + 1
             clickMultCost = clickMultCost + clickMultCostPerLevel
+            scorebox.innerHTML = "you clicked " + score + " times !!"
             cmultBtn.innerHTML = "you have " + score + " clicks now player"
             saveGame()
             setTimeout(() => {

@@ -59,12 +59,13 @@ button {
     color:#ffd35a;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
-    transition: all 2s ease-out;
+    transition: all 0.5s ease-out,
+                color .25s ease-out;
 }
 
 button:hover {
     background-color: #ffd35a;
-    border: 5px double #5e5ec9;
+    border: 10px double #5e5ec9;
     color: #5e5ec9;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 15px;
@@ -107,4 +108,16 @@ article p {
 h2.main{
     text-align: center;
     color: #a4a0ff;
+}
+
+#reset:hover {
+    background-color: #ff8080;
+    color: #5e5ec9;
+        border: 15px double #5e5ec9;
+}
+
+#reset {
+    color:#ff8080;
+    border: 5px double #ff8080;
+    transition: all 3s ease-out;
 }
